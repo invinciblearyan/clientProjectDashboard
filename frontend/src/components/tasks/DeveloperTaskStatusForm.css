@@ -1,0 +1,19 @@
+.update-task-status-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.update-task-status-form__banner {
+  padding: var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 30%, var(--color-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-danger) 6%, white);
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
+
+.update-task-status-form__actions {
+  display: flex;
+  gap: var(--space-3);
+}

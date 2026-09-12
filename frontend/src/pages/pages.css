@@ -1,0 +1,25 @@
+.status-page {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.status-page__message {
+  margin: 0 0 var(--space-4);
+  max-width: 36rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.status-page__secondary {
+  margin: var(--space-4) 0 0;
+  font-size: var(--font-size-sm);
+}
+
+.status-page__secondary a {
+  color: var(--color-accent);
+}
+
+.role-home {
+  max-width: 960px;
+}

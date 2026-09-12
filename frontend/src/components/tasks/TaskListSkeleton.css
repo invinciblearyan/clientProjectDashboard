@@ -1,0 +1,28 @@
+.task-list-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.task-list-skeleton__row {
+  height: 4.5rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-muted) 25%,
+    color-mix(in srgb, var(--color-surface-muted) 70%, white) 50%,
+    var(--color-surface-muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: task-list-skeleton-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes task-list-skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

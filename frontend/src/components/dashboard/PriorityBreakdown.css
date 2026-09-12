@@ -1,0 +1,94 @@
+.priority-breakdown__summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.priority-breakdown__summary-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.priority-breakdown__summary-value {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.priority-breakdown__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.priority-breakdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.priority-breakdown__priority {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.priority-breakdown__indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.priority-breakdown__item--critical .priority-breakdown__indicator {
+  background: var(--color-danger);
+}
+
+.priority-breakdown__item--critical {
+  border-color: #f0c9c4;
+  background: #fffbfb;
+}
+
+.priority-breakdown__item--high .priority-breakdown__indicator {
+  background: var(--color-accent);
+}
+
+.priority-breakdown__item--medium .priority-breakdown__indicator {
+  background: #8b919a;
+}
+
+.priority-breakdown__item--low .priority-breakdown__indicator {
+  background: #b8bcc4;
+}
+
+.priority-breakdown__code {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+}
+
+.priority-breakdown__count {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .priority-breakdown__list {
+    grid-template-columns: 1fr;
+  }
+}

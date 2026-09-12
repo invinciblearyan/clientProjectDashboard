@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { notificationController } from '../controllers/notification.controller';
+import { authenticate } from '../middleware/authenticate';
+import { validate } from '../middleware/validate';
+import { idParamSchema } from '../validators/common.validator';
+const router = Router();
+router.use(authenticate);
+router.get('/', notificationController.list);
+router.get('/unread-count', notificationController.unreadCount);
+router.patch('/read-all', notificationController.markAllRead);
+router.patch('/:id/read', validate(idParamSchema, 'params'), notificationController.markRead);
+export default router;

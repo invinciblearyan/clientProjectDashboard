@@ -1,0 +1,55 @@
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-6);
+  background: var(--color-bg);
+}
+
+.login-page__panel {
+  display: grid;
+  gap: var(--space-6);
+  width: min(100%, 880px);
+}
+
+.login-page__intro {
+  max-width: 34rem;
+}
+
+.login-page__eyebrow {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.login-page__title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.login-page__subtitle {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.login-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.login-page__submit {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .login-page__panel {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}

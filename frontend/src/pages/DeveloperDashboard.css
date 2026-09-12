@@ -1,0 +1,25 @@
+.developer-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 960px;
+}
+
+.developer-dashboard__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.developer-dashboard__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.developer-dashboard__subtitle {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

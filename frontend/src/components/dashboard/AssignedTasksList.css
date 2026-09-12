@@ -1,0 +1,79 @@
+.assigned-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assigned-tasks__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.assigned-tasks__item--overdue {
+  border-color: #f0c9c4;
+  background: #fffbfb;
+}
+
+.assigned-tasks__main {
+  min-width: 0;
+}
+
+.assigned-tasks__title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.assigned-tasks__link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.assigned-tasks__link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.assigned-tasks__project {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.assigned-tasks__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.assigned-tasks__overdue-label {
+  font-weight: 600;
+}
+
+.assigned-tasks__due {
+  margin-left: auto;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .assigned-tasks__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .assigned-tasks__due {
+    margin-left: 0;
+  }
+}

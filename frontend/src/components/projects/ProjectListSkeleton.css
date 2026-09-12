@@ -1,0 +1,23 @@
+.project-list-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-list-skeleton__row {
+  height: 6rem;
+  border-radius: var(--radius-md);
+  background: var(--color-border);
+  animation: project-list-skeleton-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes project-list-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}

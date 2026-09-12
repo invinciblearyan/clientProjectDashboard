@@ -1,0 +1,35 @@
+.manager-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 960px;
+}
+
+.manager-dashboard__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.manager-dashboard__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.manager-dashboard__subtitle {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.manager-dashboard__stat {
+  max-width: 18rem;
+}
+
+@media (max-width: 640px) {
+  .manager-dashboard__stat {
+    max-width: none;
+  }
+}

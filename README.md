@@ -2,6 +2,39 @@
 
 Full-stack dashboard for managing client projects, tasks, and team workflows. Supports three roles (Admin, Project Manager, Developer) with REST APIs, Socket.IO realtime updates, notifications, and scheduled overdue-task processing.
 
+## Live demo & deployment
+
+**Open the app:** https://frontend-topaz-phi-91.vercel.app
+
+| Service | URL |
+| ------- | --- |
+| **Frontend** | https://frontend-topaz-phi-91.vercel.app |
+| **Backend API** | https://backend-production-85f54.up.railway.app |
+| **Health check** | https://backend-production-85f54.up.railway.app/health |
+| **GitHub** | https://github.com/invinciblearyan/clientProjectDashboard |
+
+Hosted on **Vercel** (frontend) and **Railway** (backend, PostgreSQL, Socket.IO, cron). Backend root directory on Railway: `backend`. Frontend root directory on Vercel: `frontend`.
+
+Do **not** run `npm run db:seed` in production. Production users were bootstrapped separately from local dev seed data.
+
+### Demo access (production)
+
+Use these accounts on the **live site**:
+
+| Role | Email | Password |
+| ---- | ----- | -------- |
+| Admin | `admin@clientprojectdashboard.com` | `eucwENaX184gZvRcEJWx` |
+| Project Manager | `pm@clientprojectdashboard.com` | `PmDemo2026!Secure` |
+| Developer | `dev@clientprojectdashboard.com` | `DevDemo2026!Secure` |
+
+**Suggested reviewer flow**
+
+1. Log in as **Admin** — create a client, view global dashboard and presence.
+2. Log in as **PM** — create a project (needs a client first; Admin can create one), add tasks, assign the developer.
+3. Log in as **Developer** — view assigned tasks only, update task status, confirm notifications and live activity.
+
+Env var and deployment details: [`docs/deployment.md`](docs/deployment.md).
+
 ## Features
 
 - JWT auth with refresh token rotation (access token in memory, refresh in HttpOnly cookie)
@@ -75,7 +108,9 @@ npm run dev
 
 Frontend runs at **http://localhost:5173**. Vite proxies `/api` and `/socket.io` to the backend, so no frontend `.env` is required for the default local setup.
 
-### Seed users (development only)
+### Seed users (local development only)
+
+Use these after `npm run db:seed` — not the production demo accounts above.
 
 | Role | Email | Password |
 | ---- | ----- | -------- |
@@ -159,41 +194,6 @@ cd backend && npm test && npm run build
 ```
 
 See [`docs/testing-strategy.md`](docs/testing-strategy.md) for coverage details.
-
-## Deployment
-
-Live deployment uses **Vercel** (frontend) + **Railway** (backend, PostgreSQL, Socket.IO, cron).
-
-| Service | URL |
-| ------- | --- |
-| **Frontend** | https://frontend-topaz-phi-91.vercel.app |
-| **Backend API** | https://backend-production-85f54.up.railway.app |
-| **Health check** | https://backend-production-85f54.up.railway.app/health |
-| **GitHub** | https://github.com/invinciblearyan/clientProjectDashboard |
-
-Backend root directory on Railway: `backend`. Frontend root directory on Vercel: `frontend`.
-
-Do **not** run `npm run db:seed` in production. Production users were bootstrapped separately from local dev seed data.
-
-### Demo access (production)
-
-Use these accounts on the **live site** for review and testing:
-
-| Role | Email | Password |
-| ---- | ----- | -------- |
-| Admin | `admin@clientprojectdashboard.com` | `eucwENaX184gZvRcEJWx` |
-| Project Manager | `pm@clientprojectdashboard.com` | `PmDemo2026!Secure` |
-| Developer | `dev@clientprojectdashboard.com` | `DevDemo2026!Secure` |
-
-**Suggested reviewer flow**
-
-1. Log in as **Admin** — create a client, view global dashboard and presence.
-2. Log in as **PM** — create a project (needs a client first; Admin can create one), add tasks, assign the developer.
-3. Log in as **Developer** — view assigned tasks only, update task status, confirm notifications and live activity.
-
-Local development still uses `npm run db:seed` and the separate dev accounts in the table below.
-
-Split deployment architecture and env var details: [`docs/deployment.md`](docs/deployment.md).
 
 ## Documentation
 
